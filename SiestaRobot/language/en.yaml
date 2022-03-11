@@ -9,23 +9,23 @@ set_chat_lang: "Great, using {} Language it is from now on!"
 
 # PM Text
 pm_start_text: |
-  *Hey Darling, {} ❤️*
-  ✪ I'm an anime-theme management robot [✨](https://telegra.ph/file/6d3e3ef24f64fb6e35df0.jpg)
+  *Oi oi oi , {} san*
+  ✪ I'm mikey sano , the leader of "Toman"[*](https://telegra.ph/file/5774d6d07d0ccf9a4f7cf.mp4)
 
-  ┏━━━━━━━━•❃°•°❀°•°❃•━━━━━━━━┓
+  ┏━━━━━━━━•×°•°×°•°×•━━━━━━━━┓
   × *Server Uptime :* `{}`
   × `{}` *users, across* `{}` *chats.*
-  ┗━━━━━━━━•❃°•°❀°•°❃•━━━━━━━━┛
+  ┗━━━━━━━━•×°•°×°•°×•━━━━━━━━┛
 
   ✪ Hit /help to see my available commands.
    
 group_start_text: |
-  *👋🏻 Hi Darling, I'm Siesta Robot!*
+  * Oi oi oi kiddo, I'm mikey Robot!*
   
   *Started active since :* `{}`
 
 pm_about_text: |
-  ✺ Hey Darling I'm *Siesta Robot*, a powerful group management bot built to help you manage your group easily. ✺
+  ✺ Hey  I'm *mikey Robot*, a powerful group management bot built to help you manage your group easily. ✺
 
   ✪ I can restrict users.
   ✪ I can greet users with customizable welcome messages and even set a group's rules.
@@ -34,12 +34,12 @@ pm_about_text: |
   ✪ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
   ✪ I check for admins' permissions before executing any command and more stuffs
 
-  _Siesta's licensed under the GNU General Public License v3.0_
+  _mikey's licensed under the GNU General Public License v3.0_
   Click on button bellow to get basic help for Siesta Robot.
 pm_about_admin_text: |
   *✺ Let's make your group bit effective now ✺*
 
-  Congragulations, Siesta Robot now ready to manage your group.
+  Congragulations, mikey Robot now ready to manage your group.
 
   *Admin Tools*
   Basic Admin tools help you to protect and powerup your group.
