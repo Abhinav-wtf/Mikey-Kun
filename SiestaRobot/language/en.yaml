@@ -82,14 +82,14 @@ group_settings_text: "Click here to get this chat's settings, as well as yours."
 group_settings_button: "Settings"
 
 # PM Button
-add_bot_to_group_button: "♕ Add Me To Your Group ♕"
+add_bot_to_group_button: "add me to your gc"
 support_chat_link_button: "Support"
 updates_channel_link_button: "Update"
 notes_button: "Notes"
 source_button: "Source Code"
 help_button: "Get Help"
 back_button: "Go back"
-about_button: "About Siesta Robot"
+about_button: "About mikey "
 inline_button: "Try inline!​​"
 
 # MODULES
