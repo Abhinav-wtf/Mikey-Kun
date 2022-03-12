@@ -32,7 +32,7 @@ async def repo(_, message):
         photo=MEMEK,
         caption=f"""🔱 **Hey I'm Sano Manjiro** 🔱 
 
-**Repo Owner : [Mikey-kun](https://t.me/mikey_kun90)**
+**Repo Owned by: [TOMAN](https://t.me/toman_network)**
 **Python Version :** `{y()}`
 **Library Version :** `{o}`
 **Telethon Version :** `{s}`
