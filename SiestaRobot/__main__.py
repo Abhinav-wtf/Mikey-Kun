@@ -390,7 +390,7 @@ def siesta_about_callback(update, context):
                         InlineKeyboardButton(text="Credits", callback_data="siesta_credit"),
                     ],
                     [
-                        InlineKeyboardButton(text=gs(chat.id, "source_button"), url="https://No_U_CAN't"),
+                        InlineKeyboardButton(text=gs(chat.id, "source_button"), url="https://No_U_CANt"),
                     ],
                     [
                     InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="siesta_back"),
@@ -417,7 +417,7 @@ def siesta_about_callback(update, context):
                             InlineKeyboardButton(text=gs(chat.id, "inline_button"), switch_inline_query_current_chat=""),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/Siestaxbot?startgroup=new"),
+                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
                         ]
                     ]
                 ),
@@ -477,11 +477,11 @@ def siesta_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="----", url="-----"),
+                        InlineKeyboardButton(text="----", url="t.me/raze_00"),
                     ],
                     [
-                        InlineKeyboardButton(text="---", url="------"),
-                        InlineKeyboardButton(text="----", url="------"),
+                        InlineKeyboardButton(text="---", url="t.me/raze_00"),
+                        InlineKeyboardButton(text="----", url="t.me/raze_00"),
                     ],
                     [
                         InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="siesta_"),
