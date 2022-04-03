@@ -1,7 +1,7 @@
 # Language name in their native
 language: "English 🇬🇧"
 # name of people(s) who worked on this translation
-authors: "@saint_foire"
+authors: "@Yash-Sharma-1807"
 
 # languages
 curr_chat_lang: "Hey. Your current language is {}, select the one you want from the buttons below :)"
@@ -25,7 +25,7 @@ group_start_text: |
   *Started active since :* `{}`
 
 pm_about_text: |
-  ✺ Hey  I'm *mikey Robot*, a powerful group management bot built to help you manage your group easily. ✺
+  ✺ Hey  I'm *Mikey Robot*, a powerful group management bot built to help you manage your group easily. ✺
 
   ✪ I can restrict users.
   ✪ I can greet users with customizable welcome messages and even set a group's rules.
@@ -54,13 +54,13 @@ pm_about_notes_text: |
   ✪ You can save message/media/audio or anything as notes to get a note simply use # at the beginning of a word
   ✪ You can also set buttons for notes and filters (refer help menu)
 pm_about_support_text: |
-  *✺ Siesta Robot support chats ✺*
+  *✺ Mikey Robot support chats ✺*
 
   Join My Support Group/Channel for see or report a problem on Siesta.
 pm_about_credit_text: |
-  *✺ Credis for Siesta ✺*
+  *✺ Credis for Mikey ✺*
 
-  Here Developers Making And Give Inspiration For Made The Siesta Robot
+  Here Developers Making And Give Inspiration For Made The Mikey Robot
 pm_help_text: |
   *✺ Click on the button bellow to get description about specifics command. ✺*
 pm_help_module_text: "Here is the help for the *{}* module :\n\n"
@@ -248,7 +248,7 @@ blacklist_help: |
 chatbot_help: |
     ──「 Chatbot AI 」──
 
-    Siesta AI is the only ai system which can detect & reply upto 200 language's
+    Mikey AI is the only ai system which can detect & reply upto 200 language's
 
     ❂ /chatbot [ON/OFF]: Enables and disables AI Chat mode.
     ❂ /chatbot EN : Enables English only chatbot.
@@ -344,7 +344,7 @@ fsub_feds_help: |
 
     *Force Subscribe:*
 
-    Siesta can mute members who are not subscribed your channel until they subscribe When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
+    Mikey can mute members who are not subscribed your channel until they subscribe When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
 
     *Setup* *:* *Only creator*
     ❂ Add me in your group as admin
@@ -822,7 +822,7 @@ afk_array6: "{} is finally here!"
 afk_array7: "Welcome back! {}"
 afk_array8: "Where is {}?\nIn the chat!"
 afk_check: "{} is afk"
-afk_check_reason: "{} is afk.\nReason: <code>{}</code>"
+afk_check_reason: "{} is afk.\nReason: {}"
 
 # Antichannel.py Variabel
 active_antichannel: "Enabled antichannel in {}"
