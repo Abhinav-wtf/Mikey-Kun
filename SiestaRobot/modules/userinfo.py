@@ -17,9 +17,9 @@ from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
-from EnmuBot.modules.language import gs
+from SiestaRobot.modules.language import gs
     
-from EnmuBot import (
+from SiestaRobot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
