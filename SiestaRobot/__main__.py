@@ -816,7 +816,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                START_IMG, f"""**Yea I'm ready to fight the Toman Enemies!**""",
+                f"""**[Yea I'm ready to fight the Toman Enemies!](https://telegra.ph/file/71dd550dbe467be3030b9.jpg)**""",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
