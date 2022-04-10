@@ -83,7 +83,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-SIESTA_IMG = "https://telegra.ph/file/6d3e3ef24f64fb6e35df0.jpg"
+START_IMG = "https://telegra.ph/file/71dd550dbe467be3030b9.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @saint_foire \
@@ -814,9 +814,9 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
+            dispatcher.bot.sendMedia(
                 f"@{SUPPORT_CHAT}", 
-                f"""**[Yea I'm ready to fight the Toman Enemies!](https://telegra.ph/file/71dd550dbe467be3030b9.jpg)**""",
+                START_IMG, f"""**Yea I'm ready to fight the Toman Enemies!**""",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
