@@ -69,7 +69,7 @@ pyrate-limiter==2.6.3
 Pyrogram==1.4.12
 PySocks==1.7.1
 python-arq==6.0.3
-python-yaml
+pyyaml
 python-dateutil==2.8.2
 python-telegram-bot==13.11
 pytz==2022.1
