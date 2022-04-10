@@ -814,7 +814,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMedia(
+            dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
                 START_IMG, f"""**Yea I'm ready to fight the Toman Enemies!**""",
                 parse_mode=ParseMode.MARKDOWN
