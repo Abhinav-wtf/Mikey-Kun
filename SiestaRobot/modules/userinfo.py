@@ -17,9 +17,9 @@ from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
-from SiestaRobot.modules.language import gs
+from EnmuBot.modules.language import gs
     
-from SiestaRobot import (
+from EnmuBot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -110,15 +110,14 @@ def hpmanager(user):
         if not sql.get_user_bio(user.id):
             new_hp -= no_by_per(total_hp, 10)
 
-        if is_afk(user.id):
-            afkst = set_afk(user.id)
+        if is_user_afk(user.id):
+            afkst = afk_reason(user.id)
             # if user is afk and no reason then decrease 7%
             # else if reason exist decrease 5%
-            new_hp -= no_by_per(total_hp, 7) if not afkst else no_by_per(total_hp, 5)
-            # fbanned users will have (2*number of fbans) less from max HP
-            # Example: if HP is 100 but user has 5 diff fbans
-            # Available HP is (2*5) = 10% less than Max HP
-            # So.. 10% of 100HP = 90HP
+            if not afkst:
+                new_hp -= no_by_per(total_hp, 7)
+            else:
+                new_hp -= no_by_per(total_hp, 5)
 
     else:
         new_hp = no_by_per(total_hp, 5)
@@ -297,7 +296,7 @@ def info(update: Update, context: CallbackContext):
             text += "\nAppeal at @SpamWatchSupport"
     except:
         pass  # don't crash if api is down somehow...
-    
+
     disaster_level_present = False
 
     if user.id == OWNER_ID:
@@ -331,7 +330,7 @@ def info(update: Update, context: CallbackContext):
             result = result.json()["result"]
             if "custom_title" in result.keys():
                 custom_title = result["custom_title"]
-                text += f"\n\nTitle:\n<b>{custom_title}</b>"
+                text += f"\n\n✪Title:\n<b>{custom_title}</b>"
     except BadRequest:
         pass
 
@@ -358,7 +357,9 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Health", url="https://t.me/MikeyXUpdates/11"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/MikeyXUpdates/7")
+                                "Disaster", url="https://t.me/MikeyXUpdates/7"),
+                            InlineKeyboardButton(
+                                "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
                     ]
                 ),
@@ -376,7 +377,9 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Health", url="https://t.me/MikeyXUpdates/11"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/MikeyXUpdates/7")
+                                "Disaster", url="https://t.me/MikeyXUpdates/7"),
+                            InlineKeyboardButton(
+                                "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
                     ]
                 ),
@@ -388,6 +391,7 @@ def info(update: Update, context: CallbackContext):
         message.reply_text(
             text, parse_mode=ParseMode.HTML,
         )
+
 
     rep.delete()
 
@@ -534,7 +538,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust the Ackermans to set my bio.",
+                "I only trust the Toman to set my bio.",
             )
             return
 
