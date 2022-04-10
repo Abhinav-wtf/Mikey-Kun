@@ -8,6 +8,7 @@ requests
 python-telegram-bot==13.10.0
 SQLAlchemy==1.4.29
 psycopg2-binary
+redis
 feedparser
 faker
 hachoir
