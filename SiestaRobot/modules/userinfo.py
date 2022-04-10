@@ -37,7 +37,7 @@ from SiestaRobot.modules.sql import SESSION
 import SiestaRobot.modules.sql.userinfo_sql as sql
 from SiestaRobot.modules.disable import DisableAbleCommandHandler
 from SiestaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from SiestaRobot.modules.sql.afk_sql import is_afk, set_afk
+from SiestaRobot.modules.sql.afk_redis import is_user_afk, afk_reason
 from SiestaRobot.modules.sql.users_sql import get_user_num_chats
 from SiestaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SiestaRobot.modules.helper_funcs.extraction import extract_user
@@ -273,7 +273,7 @@ def info(update: Update, context: CallbackContext):
     if chat.type != "private" and user_id != bot.id:
         _stext = "\n✪ Presence: <code>{}</code>"
 
-        afk_st = is_afk(user.id)
+        afk_st = is_user_afk(user.id)
         if afk_st:
             text += _stext.format("AFK")
         else:
