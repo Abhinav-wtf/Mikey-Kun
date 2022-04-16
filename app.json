@@ -11,22 +11,6 @@
     
    "logo":    "https://telegra.ph/file/566d0f3fb2107bd8ecb27.jpg",  
    "repository": "https://github.com/shiinobu/https://github.com/shiinobu/SiestaRobot",
-   "addons": [
-          {
-         "options": {
-            "version": "12"
-         },
-         "plan": "heroku-postgresql"
-      }
-   ],
-   "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-python"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    }
-  ],  
    "env": {
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
@@ -43,9 +27,9 @@
          "required": true,
          "value": ""
       },    
-      "SQLALCHEMY_DATABASE_URI": {
-         "description": "Your postgres sql db, empty this field if you dont have one.",
-         "required": false,
+      "DATABASE_URL": {
+         "description": "ENTER YOUR DATABASE URL LINK HERE IF YOU DON'T HAVE THEN MAKE ONE FROM ELEPHANT.SQL.COM",
+         "required": true,
          "value": "sqldbtype://username:pw@hostname:port/db_name"
       },      
       "OWNER_ID": {
