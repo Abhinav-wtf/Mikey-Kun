@@ -53,7 +53,7 @@ ENV = bool(os.environ.get("ENV", False))
 
 from SiestaRobot.config import Development as Config
 
-TOKEN = "5270148687:AAFDUES5lQZ5A5lcMHuq4fmS8MqNaeJbZDI"
+TOKEN = Config.TOKEN
 
 try:
     OWNER_ID = 1883976677
