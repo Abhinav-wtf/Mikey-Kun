@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 from SiestaRobot import MONGO_DB_URI
 from SiestaRobot.confing import get_int_key, get_str_key
-
+from SiestaRobot import LOGGER
 
 MONGO_PORT = get_int_key("27017")
 MONGO_DB_URI = get_str_key("MONGO_DB_URI")
@@ -20,4 +20,4 @@ db = client["VainBot"]
 try:
     asyncio.get_event_loop().run_until_complete(motor.server_info())
 except ServerSelectionTimeoutError:
-    sys.exit(log.critical("Can't connect to mongodb! Exiting..."))
+    sys.exit(LOGGER.critical("ERROR"))
