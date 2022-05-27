@@ -53,16 +53,15 @@ ENV = bool(os.environ.get("ENV", False))
 
 from SiestaRobot.config import Development as Config
 
-TOKEN = Config.TOKEN
+TOKEN = "5270148687:AAFDUES5lQZ5A5lcMHuq4fmS8MqNaeJbZDI"
 
 try:
-    OWNER_ID = int(Config.OWNER_ID)
+    OWNER_ID = 1883976677
 except ValueError:
     raise Exception("Your OWNER_ID variable is not a valid integer.")
 
-JOIN_LOGGER = Config.JOIN_LOGGER
-OWNER_USERNAME = Config.OWNER_USERNAME
-ALLOW_CHATS = Config.ALLOW_CHATS
+JOIN_LOGGER = (-1001787149332)
+OWNER_USERNAME = "mikey_kun90"
 try:
     DRAGONS = {int(x) for x in Config.DRAGONS or []}
     DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
@@ -75,12 +74,12 @@ except ValueError:
     raise Exception("Your support users list does not contain valid integers.")
 
 try:
-    WOLVES = {int(x) for x in Config.WOLVES or []}
+    WOLVES = {int(x) for x in Config.WOLVES or [111]}
 except ValueError:
     raise Exception("Your whitelisted users list does not contain valid integers.")
 
 try:
-    TIGERS = {int(x) for x in Config.TIGERS or []}
+    TIGERS = {int(x) for x in Config.TIGERS or [111]}
 except ValueError:
     raise Exception("Your tiger users list does not contain valid integers.")
 
@@ -102,6 +101,7 @@ TEMP_DOWNLOAD_DIRECTORY = "/tmp"
 OPENWEATHERMAP_ID = "awoo"
 NO_LOAD = []
 DEL_CMDS = True
+REDIS_URL = "redis://default:evfJOooQQ8RlgFBvDK24@containers-us-west-35.railway.app:7690"
 STRICT_GBAN = True
 WORKERS = None
 REM_BG_API_KEY = "awoo"
