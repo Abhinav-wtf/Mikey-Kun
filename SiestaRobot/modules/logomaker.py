@@ -15,7 +15,7 @@ from SiestaRobot import OWNER_ID
 from SiestaRobot.events import register
 from SiestaRobot import telethn
 from PIL import Image, ImageDraw, ImageFont
-from EnmuBot import SUPPORT_CHAT 
+from SiestaRobot import SUPPORT_CHAT 
 
 LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
                          "https://telegra.ph/file/c1ff2d5ec5e1b5bd1b200.jpg",
