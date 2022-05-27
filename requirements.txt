@@ -58,7 +58,7 @@ pikepdf==5.1.1
 Pillow
 psutil==5.9.0
 psycopg2-binary
-ptbcontrib @ git+https://github.com/python-telegram-bot/ptbcontrib.git@main
+ptbcontrib @ git+https://github.com/python-telegram-bot/ptbcontrib.git@907070d129b7cf80b0236d72fb498667b5b22b63
 pyaes==1.6.1
 pyasn1==0.4.8
 pycryptodomex==3.14.1
