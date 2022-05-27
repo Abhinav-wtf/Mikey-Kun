@@ -157,7 +157,7 @@ else:
 from SiestaRobot.modules.sql import SESSION
 
 defaults = tg.Defaults(run_async=True)
-updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+updater = tg.Updater("5270148687:AAFDUES5lQZ5A5lcMHuq4fmS8MqNaeJbZDI", workers=4, use_context=True)
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 dispatcher = updater.dispatcher
 print("[INFO]: INITIALIZING AIOHTTP SESSION")
