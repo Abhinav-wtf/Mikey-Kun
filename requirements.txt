@@ -73,7 +73,7 @@ python-arq
 pyyaml
 pynewtonmath
 python-dateutil==2.8.2
-python-telegram-bot==13.12
+python-telegram-bot==13.11
 ffmpeg-python
 pytz==2022.1
 pytz-deprecation-shim==0.1.0.post0
