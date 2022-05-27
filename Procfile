@@ -1,1 +1,1 @@
-web: python3 -m SiestaRobot
+worker: python3 -m SiestaRobot
