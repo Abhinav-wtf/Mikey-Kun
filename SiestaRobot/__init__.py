@@ -93,7 +93,7 @@ API_HASH = "b2e1349776f839793c8a84b4a0aa8a1d"
 ERROR_LOGS = (-1001559718205)
 DB_URL = "postgresql://postgres:qN2iFdpBpF4afdBTWDgB@containers-us-west-40.railway.app:7693/railway"
 MONGO_DB_URI = "mongodb+srv://mike:mike123@cluster0.gl7x8.mongodb.net/?retryWrites=true&w=majority"
-ARQ_API = "BKVKAR-RBPBAD-HWKRPA-KJSYJK-ARQ"
+ARQ_API_KEY = "BKVKAR-RBPBAD-HWKRPA-KJSYJK-ARQ"
 ARQ_API_URL = "https://arq.hamker.in"
 DONATION_LINK = "FREE FOR EVERYONE"
 LOAD = []
