@@ -115,7 +115,7 @@ SPAMWATCH_SUPPORT_CHAT = "MikeyXSupport"
 SPAMWATCH_API = "xulqetQBT0s2R2hBzGqYsgtfAZ6Hy46unppm5qyHnM_paSjB04eEnPAD4hqsMmrG"
 INFOPIC = Config.INFOPIC
 BOT_USERNAME = "MikeyXRobot"
-    
+BOT_ID = 5270148687
     
 try:
     BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
