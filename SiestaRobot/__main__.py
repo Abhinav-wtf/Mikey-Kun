@@ -82,8 +82,17 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+buttons = [
+    [
+                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
+                            InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
+                        ]]
 
-START_IMG = "https://telegra.ph/file/71dd550dbe467be3030b9.jpg"
+START_IMG = "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @saint_foire \
@@ -158,31 +167,20 @@ def test(update: Update, context: CallbackContext):
 
 def start(update: Update, context: CallbackContext):
     args = context.args
-    chat = update.effective_chat
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
-                send_help(
-                    update.effective_chat.id, 
-                    text=gs(
-                        chat.id,
-                        "pm_help_text"
-                    ),
-                )
+                send_help(update.effective_chat.id, HELP_STRINGS)
             elif args[0].lower().startswith("ghelp_"):
                 mod = args[0].lower().split("_", 1)[1]
                 if not HELPABLE.get(mod, False):
                     return
                 send_help(
                     update.effective_chat.id,
-                    HELPABLE[mod].helps,
+                    HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="help_back"),
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
                     ),
                 )
 
@@ -200,35 +198,38 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                text=gs(chat.id, "pm_start_text").format(
+            update.effective_message.reply_photo(
+                STAMRT_IMG,
+                caption = "<b>Hello {} </b>\nI'm Mikey Sano , Leader of Toman\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n<b>Alive Since:</b> <code>{}</code>\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nHit /help to get list of possible commands.".format(
                     escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),                        
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
-                            InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
-                        ]
-                    ]
-                ),                                                                              
-                parse_mode=ParseMode.MARKDOWN,
+                    escape_markdown(uptime)),
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.HTML,
                 timeout=60,
-                disable_web_page_preview=False,
             )
     else:
-        update.effective_message.reply_text(
-            text=gs(chat.id, "group_start_text").format(
-                escape_markdown(uptime),
-                ),
-            parse_mode=ParseMode.MARKDOWN
-       )
+        ENMUSTART = "https://te.legra.ph/file/90b49303716084ccb7f98.mp4"
+        first_name = update.effective_user.first_name
+        update.effective_message.reply_video(
+           ENMUSTART, caption= "<b> Hello {} \nI Am 𝙰𝚕𝚒𝚟𝚎 𝚜𝚒𝚗𝚌𝚎</b>: <code>{}</code>".format(
+                escape_markdown(first_name),
+                uptime
+            ),
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="Support",
+                            url=f"https://telegram.dog/{SUPPORT_CHAT}",
+                        ),
+                        InlineKeyboardButton(
+                          text="Help", url=f"https://t.me/mikeyxrobot?start=help"
+                        ),  
+                    ]
+                ]
+            ),
+        )
 
 
 def error_handler(update, context):
@@ -384,7 +385,7 @@ def siesta_about_callback(update, context):
                         InlineKeyboardButton(text=gs(chat.id, "notes_button"), callback_data="siesta_notes"),
                     ],
                     [
-                    InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="siesta_back"),
+                    InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="start"),
                     ]
                 ]
             ),
