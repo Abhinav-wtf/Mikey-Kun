@@ -208,7 +208,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        ENMUSTART = "https://te.legra.ph/file/90b49303716084ccb7f98.mp4"
+        ENMUSTART = "https://telegra.ph/file/8fa1c75e637a0341c18fd.mp4"
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
            ENMUSTART, caption= "<b> Hello {} \nI Am 𝙰𝚕𝚒𝚟𝚎 𝚜𝚒𝚗𝚌𝚎</b>: <code>{}</code>".format(
