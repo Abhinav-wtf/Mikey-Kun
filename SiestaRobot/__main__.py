@@ -84,12 +84,12 @@ def get_readable_time(seconds: int) -> str:
 
 buttons = [
     [
-                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
-                            InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
+                            InlineKeyboardButton(text="About Mikey", callback_data="siesta_"),
+                            InlineKeyboardButton(text="Get Help", callback_data="help_back"),
                         ],
                         [
                             InlineKeyboardButton(
-                                text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
+                                text="Add Me to your GC", url="t.me/mikeyxrobot?startgroup=new"),
                         ]]
 
 START_IMG = "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4"
