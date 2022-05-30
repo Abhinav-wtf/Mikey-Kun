@@ -91,8 +91,15 @@ buttons = [
                             InlineKeyboardButton(
                                 text="Add Me to your GC", url="t.me/mikeyxrobot?startgroup=new"),
                         ]]
-
-STAMRT_IMG = "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4"
+PM_START_TEXT = """*Hello {}*
+  I'm Mikey Sano , the leader of Toman
+  Hit /help to see my available commands."""
+STAMRT = ( "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4",
+               "https://telegra.ph/file/11ddbdfbe586b4ada884d.jpg",
+               "https://telegra.ph/file/0d6924f57e33d2ca0e855.jpg",
+               "https://telegra.ph/file/68305dbe3586c26530c3e.jpg",
+               "https://telegra.ph/file/07aa4c8735ddb4a5c8d88.jpg",
+               "https://telegra.ph/file/c781c4322518ccf440ecd.jpg",)  
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @saint_foire \
@@ -209,12 +216,9 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                STAMRT_IMG,
-                caption = "<b>Hello {} </b>\nI'm Mikey Sano , Leader of Toman\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n<b>Alive Since:</b> <code>{}</code>\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nHit /help to get list of possible commands.".format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime)),
+               random.choice(STAMRT),PM_START_TEXT.format(first_name),
                 reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
     else:
@@ -511,28 +515,11 @@ def Source_about_callback(update, context):
             ),
         )
     elif query.data == "source_back":
-        first_name = update.effective_user.first_name
-        query.message.edit_text(
-                text=gs(chat.id, "pm_start_text").format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
-                            InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
-                        ]
-                    ]
-                ),
+        query.message.edit_caption(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-                disable_web_page_preview=False,
         )
 
 def get_help(update: Update, context: CallbackContext):
