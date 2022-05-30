@@ -85,7 +85,7 @@ def get_readable_time(seconds: int) -> str:
 
 buttons = [
     [
-                            InlineKeyboardButton(text="Owner", url="t.me/mikey_kun90),
+                            InlineKeyboardButton(text="Owner", url="t.me/mikey_kun90"),
                             InlineKeyboardButton(text="Get Help", url=f"https://t.me/mikeyxrobot?start=help"),
                         ],
                         [
