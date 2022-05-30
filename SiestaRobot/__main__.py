@@ -85,8 +85,8 @@ def get_readable_time(seconds: int) -> str:
 
 buttons = [
     [
-                            InlineKeyboardButton(text="About Mikey", callback_data="siesta_"),
-                            InlineKeyboardButton(text="Get Help", callback_data="help_back"),
+                            InlineKeyboardButton(text="Owner", url="t.me/mikey_kun90),
+                            InlineKeyboardButton(text="Get Help", url=f"https://t.me/mikeyxrobot?start=help"),
                         ],
                         [
                             InlineKeyboardButton(
@@ -95,8 +95,7 @@ buttons = [
 PM_START_TEXT = """*Hello {}*
   I'm Mikey Sano , the leader of Toman
   Hit /help to see my available commands."""
-STAMRT = ( "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4",
-               "https://telegra.ph/file/11ddbdfbe586b4ada884d.jpg",
+STAMRT = ( "https://telegra.ph/file/11ddbdfbe586b4ada884d.jpg",
                "https://telegra.ph/file/0d6924f57e33d2ca0e855.jpg",
                "https://telegra.ph/file/68305dbe3586c26530c3e.jpg",
                "https://telegra.ph/file/07aa4c8735ddb4a5c8d88.jpg",
@@ -175,6 +174,7 @@ def test(update: Update, context: CallbackContext):
 
 def start(update: Update, context: CallbackContext):
     args = context.args
+    chat = update.effective_chat
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
         if len(args) >= 1:
@@ -213,6 +213,7 @@ def start(update: Update, context: CallbackContext):
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
+
 
         else:
             first_name = update.effective_user.first_name
@@ -400,7 +401,7 @@ def siesta_about_callback(update, context):
                         InlineKeyboardButton(text=gs(chat.id, "notes_button"), callback_data="siesta_notes"),
                     ],
                     [
-                    InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="start"),
+                    InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="siesta_back"),
                     ]
                 ]
             ),
