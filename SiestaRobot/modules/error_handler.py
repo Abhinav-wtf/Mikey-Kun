@@ -110,10 +110,10 @@ def error_callback(update: Update, context: CallbackContext):
         url = f"https://spaceb.in/{response['payload']['id']}"
         context.bot.send_message(
             ERROR_LOGS,
-            text=f"#{context.error.identifier}\n<b>Darling, i have an Error :"
+            text=f"#{context.error.identifier}\n<b>I have an Error :"
             f"</b>\n<code>{e}</code>",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("See The Error Darling!", url=url)]],
+                [[InlineKeyboardButton("See The Error!", url=url)]],
             ),
             parse_mode=ParseMode.HTML,
         )
