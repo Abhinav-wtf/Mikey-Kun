@@ -6,6 +6,7 @@ import time
 import re
 import sys
 import traceback
+import random
 
 from sqlalchemy.sql.expression import text, update
 import SiestaRobot.modules.sql.users_sql as sql
