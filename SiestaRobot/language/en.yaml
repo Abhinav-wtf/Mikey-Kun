@@ -9,15 +9,10 @@ set_chat_lang: "Great, using {} Language it is from now on!"
 
 # PM Text
 pm_start_text: |
-  *Oi oi oi , {} san*
-  ✪ I'm mikey sano , the leader of "Toman"[*](https://telegra.ph/file/9b534438466d7b3232a39.mp4)
+  *Hello {}*
+  I'm Mikey Sano , the leader of "Toman"[*](https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4)
 
-  ┏━━━━━━━━•×°•°×°•°×•━━━━━━┓
-  × *Server Uptime :* `{}`
-  × `{}` *users, across* `{}` *chats.*
-  ┗━━━━━━━━•×°•°×°•°×•━━━━━━┛
-
-  ✪ Hit /help to see my available commands.
+  Hit /help to see my available commands.
    
 group_start_text: |
   * Oi oi oi kiddo, I'm mikey Robot!*
@@ -39,7 +34,7 @@ pm_about_text: |
 pm_about_admin_text: |
   *✺ Let's make your group bit effective now ✺*
 
-  Congragulations, mikey Robot now ready to manage your group.
+  Congragulations, Mikey Robot now ready to manage your group.
 
   *Admin Tools*
   Basic Admin tools help you to protect and powerup your group.
@@ -82,7 +77,7 @@ group_settings_text: "Click here to get this chat's settings, as well as yours."
 group_settings_button: "Settings"
 
 # PM Button
-add_bot_to_group_button: "add me to your gc"
+add_bot_to_group_button: "Add Me to your GC"
 support_chat_link_button: "Support"
 updates_channel_link_button: "Update"
 notes_button: "Notes"
