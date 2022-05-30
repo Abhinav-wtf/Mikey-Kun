@@ -354,7 +354,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Disaster", url="https://t.me/MikeyXUpdates/7"),
                             InlineKeyboardButton(
-                                "User", url=f"tg://user?id={user.id})
+                                "User", url=f"tg://user?id={user.id}")
                         ],
                     ]
                 ),
@@ -374,7 +374,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Disaster", url="https://t.me/MikeyXUpdates/7"),
                             InlineKeyboardButton(
-                                url=f"tg://user?id={user.id})
+                                "User", url=f"tg://user?id={user.id}")
                         ],
                     ]
                 ),
