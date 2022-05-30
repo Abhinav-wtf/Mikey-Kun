@@ -264,11 +264,6 @@ def info(update: Update, context: CallbackContext):
     if user.last_name:
         text += f"\n✪ Last Name: {html.escape(user.last_name)}"
 
-    if user.username:
-        text += f"\n✪ Username: @{html.escape(user.username)}"
-
-    text += f"\n✪ Userlink: {mention_html(user.id, 'link')}"
-
     if chat.type != "private" and user_id != bot.id:
         _stext = "\n✪ Presence: <code>{}</code>"
 
@@ -359,7 +354,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Disaster", url="https://t.me/MikeyXUpdates/7"),
                             InlineKeyboardButton(
-                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                                "User", url=f"tg://user?id={user.id})
                         ],
                     ]
                 ),
@@ -379,7 +374,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Disaster", url="https://t.me/MikeyXUpdates/7"),
                             InlineKeyboardButton(
-                                "User", url=f"https://t.me/{html.escape(user.username)}")
+                                url=f"tg://user?id={user.id})
                         ],
                     ]
                 ),
