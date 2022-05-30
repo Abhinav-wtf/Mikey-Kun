@@ -92,7 +92,7 @@ buttons = [
                                 text="Add Me to your GC", url="t.me/mikeyxrobot?startgroup=new"),
                         ]]
 
-START_IMG = "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4"
+STAMRT_IMG = "https://telegra.ph/file/cd557aa6aa9194ac2b939.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @saint_foire \
@@ -171,16 +171,26 @@ def start(update: Update, context: CallbackContext):
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
-                send_help(update.effective_chat.id, HELP_STRINGS)
+                send_help(
+                    update.effective_chat.id, 
+                    text=gs(
+                        chat.id,
+                        "pm_help_text"
+                    ),
+                )
             elif args[0].lower().startswith("ghelp_"):
                 mod = args[0].lower().split("_", 1)[1]
                 if not HELPABLE.get(mod, False):
                     return
                 send_help(
                     update.effective_chat.id,
-                    HELPABLE[mod].__help__,
+                    HELPABLE[mod].helps,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                        [
+                            [
+                                InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="help_back"),
+                            ]
+                        ]
                     ),
                 )
 
