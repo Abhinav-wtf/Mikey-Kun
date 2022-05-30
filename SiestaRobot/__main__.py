@@ -210,17 +210,14 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
-                        ],
-                        [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "inline_button"), switch_inline_query_current_chat=""),
                         ],
                         [
                             InlineKeyboardButton(
                                 text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
                         ]
                     ]
-                ),
+                ),                                                                              
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
                 disable_web_page_preview=False,
@@ -383,14 +380,8 @@ def siesta_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(text="Admins", callback_data="siesta_admin"),
-                        InlineKeyboardButton(text=gs(chat.id, "notes_button"), callback_data="siesta_notes"),
-                    ],
-                    [
                         InlineKeyboardButton(text=gs(chat.id, "support_chat_link_button"), callback_data="siesta_support"),
-                        InlineKeyboardButton(text="Credits", callback_data="siesta_credit"),
-                    ],
-                    [
-                        InlineKeyboardButton(text=gs(chat.id, "source_button"), url="https://www.google.com/search?q=sup&oq=sup&aqs=chrome..69i57j69i61l3.1662j0j1&sourceid=chrome&ie=UTF-8"),
+                        InlineKeyboardButton(text=gs(chat.id, "notes_button"), callback_data="siesta_notes"),
                     ],
                     [
                     InlineKeyboardButton(text=gs(chat.id, "back_button"), callback_data="siesta_back"),
@@ -411,13 +402,11 @@ def siesta_about_callback(update, context):
                     [
                         [
                             InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
-                        ],
-                        [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "inline_button"), switch_inline_query_current_chat=""),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
+                            InlineKeyboardButton(
+                                text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
                         ]
                     ]
                 ),
@@ -522,13 +511,11 @@ def Source_about_callback(update, context):
                     [
                         [
                             InlineKeyboardButton(text=gs(chat.id, "about_button"), callback_data="siesta_"),
-                        ],
-                        [
                             InlineKeyboardButton(text=gs(chat.id, "help_button"), callback_data="help_back"),
-                            InlineKeyboardButton(text=gs(chat.id, "inline_button"), switch_inline_query_current_chat=""),
                         ],
                         [
-                            InlineKeyboardButton(text=gs(chat.id, "add_bot_to_group_button"), url="t.me/Siestaxbot?startgroup=new"),
+                            InlineKeyboardButton(
+                                text=gs(chat.id, "add_bot_to_group_button"), url="t.me/mikeyxrobot?startgroup=new"),
                         ]
                     ]
                 ),
@@ -814,11 +801,17 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}", 
-                f"""**[Yea I'm ready to fight the Toman Enemies!](https://telegra.ph/file/71dd550dbe467be3030b9.jpg)**""",
-                parse_mode=ParseMode.MARKDOWN
-            )
+           dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", f"[Yea I'm Up!](https://telegra.ph/file/79175ee9e140357dde34f.mp4)", parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="[Add Me To Your Group]",
+                             url="t.me/mikeyxrobot?startgroup=new")
+                     ] 
+                ]
+            ),
+        ) 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
