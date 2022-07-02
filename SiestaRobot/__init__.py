@@ -56,20 +56,20 @@ from SiestaRobot.config import Development as Config
 TOKEN = Config.TOKEN
 
 try:
-    OWNER_ID = 1883976677
+    OWNER_ID = 1471781417
 except ValueError:
     raise Exception("Your OWNER_ID variable is not a valid integer.")
 
 JOIN_LOGGER = (-1001787149332)
 OWNER_USERNAME = "mikey_kun90"
 try:
-    DRAGONS = {int(x) for x in Config.DRAGONS or []}
-    DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
+    DRAGONS = {int(x) for x [5231333039,1537076718,2093473332,1902443299,5192635498,1759046084,1403232698]}
+    DEV_USERS = {int(x) for x in [5192635498,5146000168,5147265129,861432102,5231333039]}
 except ValueError:
     raise Exception("Your sudo or dev users list does not contain valid integers.")
 
 try:
-    DEMONS = {int(x) for x in Config.DEMONS or []}
+    DEMONS = {int(x) for x in Config.DEMONS or [5380679553,2039336161,1242979521,5231333039,2087025431,5153636966,2087025431,1923819821]}
 except ValueError:
     raise Exception("Your support users list does not contain valid integers.")
 
